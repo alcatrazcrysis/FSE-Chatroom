@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html >
+<head>
+
+    <title>Chat Room</title>
+    <link  rel="stylesheet" href="public/stylesheets/style.css" type="text/css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        function getdate()
+        {
+            var d = new Date(),
+                minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+                hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+                ampm = d.getHours() >= 12 ? 'pm' : 'am',
+                month=d.getMonth()+1<10 ? '0'+(d.getMonth()+1):d.getMonth()
+                ;
+            return month+'.'+d.getDate()+'.'+d.getFullYear()+'  '+hours+':'+minutes+ampm;
+        }
+    </script>
+</head>
+<body>
+<div id="wrapper">
+    <div id="menu">
+        <p class="welcome">FSE Chat Room<b></b></p>
+        <p class="logout"><a id="exit" href="#">Exit</a></p>
+        <div style="clear:both"></div>
+    </div>
+    <dl id="messages"></dl>
+    <div id="chatbox"></div>
+
+    <form name="message" action="">
+        <input name="usermsg"  id="usermsg" size="63" /><br>
+        <button>Post</button>
+    </form>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+<script >
+    // jQuery Document
+    $(document).ready(function(){
+        var socket = io();
+        $('form').submit(function(){
+            socket.emit('chat message', {message:$('#usermsg').val(),date:getdate()});
+            $('#usermsg').val('');
+            return false;
+        });
+        socket.on('connect',function(data){
+            var nickname=prompt("what is your username?");
+            socket.emit('join',nickname);
+        });
+        socket.on('chat message', function(msg){
+            $('#messages').append($('<dt>').text("("+msg.date+")"+msg.name+":"));
+            $('#messages').append($('<dd>').text(msg.message));
+
+        });
+    });
+</script>
+</body>
+</html>

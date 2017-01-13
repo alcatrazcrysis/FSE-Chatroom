@@ -1,0 +1,64 @@
+body {
+  font:12px arial;
+  color: #222;
+  text-align:center;
+   }
+
+form, p, span {
+  margin:0;
+  padding:0; }
+
+input { font:12px arial;
+}
+
+a {
+  color:#0000FF;
+  text-decoration:none; }
+
+a:hover { text-decoration:underline; }
+
+#wrapper {
+  margin:0 auto;
+  padding-bottom:0px;
+  background:#EBF4FB;
+  width:504px;
+  border:1px solid #ACD8F0;
+   float:left;}
+#messages { list-style-type: none; margin: 0; padding: 0; }
+#messages li { }
+#messages dt{padding: 10px 10px; background: #eee;margin-left: 27px;
+  margin-right:27px;text-align: left;font-size:8px;}
+#messages dd{padding: 10px 10px; background: #eee;margin-left: 27px;
+  margin-right:27px;text-align: left;}
+#loginform { padding-top:18px; }
+
+#loginform p { margin: 5px; }
+
+#chatbox {
+  text-align:left;
+  margin:0 auto;
+  margin-bottom:25px;
+  padding:10px;
+  background:#fff;
+  height:270px;
+  width:430px;
+  border:1px solid #ACD8F0;
+  overflow:auto; }
+
+#usermsg {
+  width:450px;
+  border:1px solid #ACD8F0;
+  }
+
+#submit { width: 60px; }
+
+.error { color: #ff0000; }
+
+#menu { background-color: deepskyblue;
+}
+
+.welcome { float:left;font-size: 40px; }
+
+.logout { float:right; }
+
+.msgln { margin:0 0 2px 0; }
