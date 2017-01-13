@@ -1,0 +1,1 @@
+﻿This chatroom is the pre-assignment of 18652-Foundation of Software Engineering
