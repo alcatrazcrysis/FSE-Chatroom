@@ -41,6 +41,7 @@ io.on('connection', function(socket){
 
 
     });
+    //add a comment
     socket.on('chat message', function(msg){
         var username=socket.username;
         var messageshow="("+msg.date+")"+username+":"+msg.message;
