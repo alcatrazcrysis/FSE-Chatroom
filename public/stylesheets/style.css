@@ -25,16 +25,28 @@ a:hover { text-decoration:underline; }
   border:1px solid #ACD8F0;
    float:left;}
 #messages { list-style-type: none; margin: 0; padding: 0; }
-#messages li { }
-#messages dt{padding: 10px 10px; background: #eee;margin-left: 27px;
-  margin-right:27px;text-align: left;font-size:8px;}
-#messages dd{padding: 10px 10px; background: #eee;margin-left: 27px;
+#chatbox {
+
+  margin:0 auto;
+  margin-bottom:25px;
+  padding:10px;
+  background:#fff;
+  height:270px;
+  width:430px;
+  border:1px solid #ACD8F0;
+  overflow:auto;
+}
+#messages dt{padding: 10px 10px; background: floralwhite;margin-left: 27px;
+  margin-right:27px;text-align: left;font-size:15px;}
+#messages dd{padding: 10px 10px; background: floralwhite;margin-left: 27px;
   margin-right:27px;text-align: left;}
+
+#messages :nth-child(odd) { background: #eee; }
 #loginform { padding-top:18px; }
 
 #loginform p { margin: 5px; }
 
-#chatbox {
+/*#chatbox {
   text-align:left;
   margin:0 auto;
   margin-bottom:25px;
@@ -43,7 +55,7 @@ a:hover { text-decoration:underline; }
   height:270px;
   width:430px;
   border:1px solid #ACD8F0;
-  overflow:auto; }
+  overflow:auto; }*/
 
 #usermsg {
   width:450px;
@@ -57,7 +69,7 @@ a:hover { text-decoration:underline; }
 #menu { background-color: deepskyblue;
 }
 
-.welcome { float:left;font-size: 40px; }
+.welcome { float:left;font-size: 30px; }
 
 .logout { float:right; }
 
