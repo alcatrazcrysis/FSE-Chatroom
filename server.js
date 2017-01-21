@@ -28,9 +28,7 @@ io.on('connection', function(socket){
     socket.on('join',function(name)
     {
         socket.username=name;
-/*        messages.forEach(function(message){
-            socket.emit("chat message",message.name+":"+message.data)
-        });*/
+
         var messagestored=[];
         db.user.find(function(err, docs){
             messagestored=docs;
@@ -48,15 +46,7 @@ io.on('connection', function(socket){
       db.user.insert({name:username, message:msg.message, date:msg.date},function(err, result){
          
        });
-
-
-
-/*        messages.push({name:username,data:msg});
-        if(messages.length>10)
-        {
-            messages.shift();
-        }*/
-        io.emit('chat message', {date:msg.date,name:username,message:msg.message});
+      io.emit('chat message', {date:msg.date,name:username,message:msg.message});
         console.log(messageshow);
     });
 });

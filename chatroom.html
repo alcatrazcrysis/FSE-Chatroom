@@ -31,8 +31,8 @@
     </div>
 
     <form name="message" action="">
-        <input name="usermsg"  id="usermsg" size="63" /><br>
-        <button>Post</button>
+        <input name="usermsg"  id="usermsg"  size="100"/><br>
+        <button id="but">Post</button>
     </form>
 </div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
@@ -49,9 +49,24 @@
             var nickname=prompt("what is your username?");
             socket.emit('join',nickname);
         });
+        var flag=0;
         socket.on('chat message', function(msg){
-            $('#messages').append($('<dt>').text("("+msg.date+")"+msg.name+":"));
-            $('#messages').append($('<dd>').text(msg.message));
+            ;
+            if(flag==0)
+            {
+                $('#messages').append($('<dt>').text("("+msg.date+")"+msg.name+":").addClass("orange"));
+
+                $('#messages').append($('<dd>').text(msg.message).addClass("orange"));
+                flag=flag+1;
+            }
+            else
+            {
+                $('#messages').append($('<dt>').text("("+msg.date+")"+msg.name+":").addClass("blue"));
+
+                $('#messages').append($('<dd>').text(msg.message).addClass("blue"));
+                flag=flag-1;
+            }
+
 
         });
     });

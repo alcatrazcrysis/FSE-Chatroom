@@ -29,36 +29,39 @@ a:hover { text-decoration:underline; }
 
   margin:0 auto;
   margin-bottom:25px;
-  padding:10px;
+  padding:0px;
   background:#fff;
   height:270px;
   width:430px;
   border:1px solid #ACD8F0;
   overflow:auto;
 }
-#messages dt{padding: 10px 10px; background: floralwhite;margin-left: 27px;
-  margin-right:27px;text-align: left;font-size:15px;}
-#messages dd{padding: 10px 10px; background: floralwhite;margin-left: 27px;
-  margin-right:27px;text-align: left;}
-
-#messages :nth-child(odd) { background: #eee; }
-#loginform { padding-top:18px; }
-
-#loginform p { margin: 5px; }
-
-/*#chatbox {
-  text-align:left;
-  margin:0 auto;
-  margin-bottom:25px;
-  padding:10px;
-  background:#fff;
-  height:270px;
-  width:430px;
-  border:1px solid #ACD8F0;
-  overflow:auto; }*/
+#but {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+#messages dt{padding: 10px 10px;
+ ;text-align: left;font-size:15px;}
+#messages dd{padding: 10px 10px; margin-left: 0px;
+  margin-right:0px;text-align: left;}
+.orange{
+  background:lightgoldenrodyellow;
+}
+.blue
+{
+  background: lightblue;
+}
 
 #usermsg {
-  width:450px;
+  width:430px;
   border:1px solid #ACD8F0;
   }
 
